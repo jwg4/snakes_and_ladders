@@ -13,4 +13,10 @@ class Matrix(object):
                 if s[j] > self.size:
                     s[j] = i
             s.sort()
+        for head, tail in self.snakes:
+            for t in l:
+                for j in range(len(t)):
+                    if t[j] == head:
+                        t[j] = tail
+                t.sort()
         return l
