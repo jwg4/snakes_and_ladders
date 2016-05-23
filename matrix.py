@@ -1,7 +1,9 @@
 class Matrix(object):
     def __init__(self, size, snakes, ladders):
-        pass
+        self.size = size
+        self.snakes = snakes
+        self.ladders = ladders
 
     @property
     def transitions(self):
-        return []
+        return range(0, self.size + 1)

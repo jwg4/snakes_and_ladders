@@ -8,3 +8,4 @@ class TestMatrix(unittest.TestCase):
         size = 6
         matrix = Matrix(size, [], [])
         transitions = matrix.transitions
+        self.assertEqual(len(transitions), size+1)
