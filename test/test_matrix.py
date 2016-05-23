@@ -16,3 +16,5 @@ class TestSimpleMatrix(unittest.TestCase):
     def test_transitions_near_the_finish(self):
         self.assertEqual(self.transitions[1], [1,2,3,4,5,6])
 
+    def test_transitions_even_nearer_the_finish(self):
+        self.assertEqual(self.transitions[4], [4,4,4,4,5,6])
