@@ -9,3 +9,4 @@ class TestMatrix(unittest.TestCase):
         matrix = Matrix(size, [], [])
         transitions = matrix.transitions
         self.assertEqual(len(transitions), size+1)
+        self.assertEqual(transitions[0], [1,2,3,4,5,6])

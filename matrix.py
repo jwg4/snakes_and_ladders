@@ -6,4 +6,5 @@ class Matrix(object):
 
     @property
     def transitions(self):
-        return range(0, self.size + 1)
+        l = [ range(i+1, i+7) for i in range(0, self.size + 1) ]
+        return l
