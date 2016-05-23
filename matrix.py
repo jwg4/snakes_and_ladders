@@ -7,4 +7,10 @@ class Matrix(object):
     @property
     def transitions(self):
         l = [ range(i+1, i+7) for i in range(0, self.size + 1) ]
+        for i in range(0, self.size + 1):
+            s = l[i]
+            for j in range(len(s)):
+                if s[j] > self.size:
+                    s[j] = i
+            s.sort()
         return l
