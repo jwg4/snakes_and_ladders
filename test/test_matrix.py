@@ -30,3 +30,14 @@ class TestMatrixWithOneSnake(unittest.TestCase):
     def test_that_nothing_transitions_to_the_head_of_the_snake(self):
         for t in self.transitions:
             self.assertNotIn(5, t)
+
+class TestMatrixWithOneLadder(unittest.TestCase):
+    def setUp(self):
+        self.size = 6
+        self.ladders = [(2, 5)]
+        matrix = Matrix(self.size, self.ladders, [])
+        self.transitions = matrix.transitions
+
+    def test_that_nothing_transitions_to_the_foot_of_the_ladder(self):
+        for t in self.transitions:
+            self.assertNotIn(2, t)
