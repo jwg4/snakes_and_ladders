@@ -6,8 +6,8 @@ from matrix import Matrix
 class TestSimpleMatrix(unittest.TestCase):
     def setUp(self):
         self.size = 6
-        matrix = Matrix(self.size, [], [])
-        self.transitions = matrix.transitions
+        self.matrix = Matrix(self.size, [], [])
+        self.transitions = self.matrix.transitions
 
     def test_ctor_and_basic_transitions(self):
         self.assertEqual(len(self.transitions), self.size+1)
