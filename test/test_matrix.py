@@ -22,6 +22,7 @@ class TestSimpleMatrix(unittest.TestCase):
     def test_that_matrix_is_correct(self):
         self.assertEqual(self.matrix.transition_matrix.ndim, 2)
         self.assertEqual(self.matrix.transition_matrix.shape[0], 7)
+        self.assertEqual(self.matrix.transition_matrix.shape[1], 7)
 
         
 class TestMatrixWithOneSnake(unittest.TestCase):
