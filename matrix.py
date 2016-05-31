@@ -28,7 +28,7 @@ class Matrix(object):
         for i in self.transitions:
             l = [ 0 for x in range(self.size + 1) ]
             for j in i:
-                l[j] = 1/6
+                l[j] = l[j] + 1.0/6
             yield l
 
     @property

@@ -5,7 +5,7 @@ from matrix import Matrix
 
 class TestInvariants(object):
     def test_unit_mass_on_last_row(self):
-        self.assertEqual(self.transition_matrix[self.size, self.size], 1)
+        self.assertAlmostEqual(self.transition_matrix[self.size, self.size], 1)
 
     def test_last_row_of_transitions(self):
         self.assertEqual(self.transitions[self.size], [self.size] * 6)
