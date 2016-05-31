@@ -1,3 +1,6 @@
+import numpy as np
+
+
 class Matrix(object):
     def __init__(self, size, snakes, ladders):
         self.size = size
@@ -20,3 +23,14 @@ class Matrix(object):
                         t[j] = tail
                 t.sort()
         return l
+
+    def _transition_matrix_rows(self):
+        for i in self.transitions:
+            l = [ 0 for x in range(self.size + 1) ]
+            for j in i:
+                l[j] = 1/6
+            yield l
+
+    @property
+    def transition_matrix(self):
+        return np.matrix(list(self._transition_matrix_rows()))

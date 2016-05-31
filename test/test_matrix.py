@@ -19,6 +19,10 @@ class TestSimpleMatrix(unittest.TestCase):
     def test_transitions_even_nearer_the_finish(self):
         self.assertEqual(self.transitions[4], [4,4,4,4,5,6])
 
+    def test_that_matrix_is_correct(self):
+        self.assertEqual(self.matrix.transition_matrix.ndim, 2)
+        self.assertEqual(self.matrix.transition_matrix.shape[0], 7)
+
         
 class TestMatrixWithOneSnake(unittest.TestCase):
     def setUp(self):
