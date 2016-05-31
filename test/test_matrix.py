@@ -3,11 +3,19 @@ import unittest
 from matrix import Matrix
 
 
-class TestSimpleMatrix(unittest.TestCase):
+class TestInvariants(object):
+    def test_unit_mass_on_last_row(self):
+        self.assertEqual(self.transition_matrix[self.size, self.size], 1)
+
+    def test_last_row_of_transitions(self):
+        self.assertEqual(self.transitions[self.size], [self.size] * 6)
+
+class TestSimpleMatrix(unittest.TestCase, TestInvariants):
     def setUp(self):
         self.size = 6
         self.matrix = Matrix(self.size, [], [])
         self.transitions = self.matrix.transitions
+        self.transition_matrix = self.matrix.transition_matrix
 
     def test_ctor_and_basic_transitions(self):
         self.assertEqual(len(self.transitions), self.size+1)
